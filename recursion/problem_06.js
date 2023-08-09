@@ -75,6 +75,8 @@ var getRightChildIndex = function(heap,val){
     return (getIndex(heap,val)*2)+2;
 };
 
-// ins(heap,100);
+ins(heap,100);
 
 del(heap,75);
+
+console.log(heap);
