@@ -9,7 +9,24 @@ Return true if you can finish all courses. Otherwise, return false.
 Exmaples:
 
 prerequisites: [[1,0],[2,1],[2,5],[0,3],[4,3],[3,5],[4,5]] => True
+
+   (3)-->(4)
+   /^    ^
+ </  \  /
+(0)  (5)
+  \    \
+  \     >
+  >(1)-->(2)
+
 prerequisites: [[1,0],[2,1],[5,2],[0,3],[4,3],[3,5],[4,5]] => False
+
+   (3)-->(4)
+   /^    ^
+ </  \  /
+(0)  (5)
+  \    <
+  \     \
+  >(1)-->(2)
 
 Basically you need to check if there is a cycle in this directed graph or not...
 

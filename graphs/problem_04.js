@@ -6,7 +6,15 @@ We will send a signal from a given node k. Return the minimum time it takes for 
 Example:
 
 Input: times = [[2,1,1],[2,3,1],[3,4,1]], n = 4, k = 2
+
+    (2) 
+   1/ \1 
+(1)<  >(3)
+      /1
+  (4)<
+  
 Output: 2
+
 */
 
 
