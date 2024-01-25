@@ -8,7 +8,7 @@ sumIntervals( [
    [3, 5]
 ] ) => 9
 
-Tipp: A legegszerűbb megoldás halmazt (Set) használni
+Tip: Use set!
 */
 
 let testCase = [[1,4],[7,10],[3,5]];
