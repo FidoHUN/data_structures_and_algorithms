@@ -39,17 +39,20 @@ Az előző megoldásunk eléggé brute force, viszont átlátható, egyszerű é
 Próbáljuk meg optimalizálni a kódot azzal, hogy egyrészt a shifting pointers technikát 
 alkalmazzuk, másrészt pedig nem hozunk létre új adatszerkezetet, hanem az eredeti adaton 
 dolgozunk! Ebben az esetben semmilyen változást nem érünk el, ha a shifting pointereket 
-a stringek elején indítjuk, hiszen eddig is ezt tettük. Ha viszont a string végétől indulunk, 
-akkor egy '#' jel tulajdonképpen egy kettes ugrást jelent, ha a rákövetkező elem egy betű. 
-Ha azonban ismét egy '#'-t ütünk el, 
+a stringek elején indítjuk, hiszen eddig is ezt tettük. Ha viszont a string végétől indulunk: 
 
+Egy '#' jel tulajdonképpen egy kettes ugrást jelent, ha a rákövetkező elem egy betű. 
+DE! Még mielőtt ugornánk, össze kell számolni, hogy mennyi '#' jel van egymás mellett, 
+ugyanis két '#' jel egymás mellett már 4 ugrást jelent.
 
 S: 'abc#d' , T: 'abcc##d' => True
        _              _
 első iteráció: p1=S[4], p2=T[6] => S[4]===T[6] => igen, ugrunk egy iterációt => p1=S[3], p2=T[5]
 második iteráció:  p1=S[3], p2=T[5] => S[3]===T[5] => igen, de ezek '#'-ek => oké, mi lenne a rákövetkező elem? => 
   S esetében egy 'c' => ugorjunk kettőt p1-el, ez tulajdonképpen olyan mintha kitörölnénk 'c'-t =>  p1=S[1]
-  T esetében egy '#' => oké, akkor kezdjünk már el ezeket a '#'-eket számolni mert ki tudja mennyi lesz... mi lenne a következő elem => 'c' => oké, 2 #-et számoltunk össze, akkor mivel egy '#'-nél kettőt ugrunk, most négyet fogunk =>  p2=T[1]
+  T esetében egy '#' => oké, akkor kezdjünk már el ezeket a '#'-eket számolni mert ki tudja mennyi lesz... 
+  mi lenne a következő elem => 'c' => oké, 2 #-et számoltunk össze, akkor mivel egy '#'-nél kettőt ugrunk, 
+  most négyet fogunk =>  p2=T[1]
 harmadik iteráció) p1=S[1], p2=T[1] => S[1]===T[1] => igen, ugrunk egy iterációt => p1=S[0], p2=T[0]
 negyedik iteráció) p1=S[0], p2=T[0] => S[0]===T[0] => igen, végére értünk a két stringnek
 */

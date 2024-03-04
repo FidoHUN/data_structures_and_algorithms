@@ -31,7 +31,7 @@ let height = [6,9,3,4,5,8]
 //   let maxArea = 0
 //   for (let i = 0; i < height.length; i++) {
 //     for (let j = i + 1; j < height.length; j++) {
-//       let area = Math.min(height[i], height[j]) * (j - i)
+//       let area = Math.min(height[i], height[j]) * Math.abs(i - j)
 //       if (area > maxArea) maxArea = area
 //     }
 //   }

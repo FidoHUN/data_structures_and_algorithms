@@ -54,7 +54,7 @@ let height = [0,1,0,2,1,0,3,1,0,1,2]
 // console.log(trap(height))
 
 /*
-T:O(n)
+T:O(n2)
 S:O(1)
 */
 

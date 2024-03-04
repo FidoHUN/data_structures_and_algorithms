@@ -62,15 +62,26 @@ var lengthOfLongestSubstring = function (s) {
   let righty = 0
   let hash = {}
   let longest = 0
+  console.log(s)
   while (righty !== s.length) {
+    // Ha van új karakter, adjuk hozzá a hash-hez
     if (hash[s[righty]] === undefined) {
       hash[s[righty]] = righty
     } else {
+      // Ha már van ilyen karakter, de kilóg az 'ablakból', akkor csak frissítem a hash-t
       if (hash[s[righty]] < lefty) {
+        console.log('kilóg', longest)
+        console.log(hash,lefty,righty)
         hash[s[righty]] = righty
+        console.log(hash,lefty,righty)
       } else {
+        // Ha már van ilyen karakter, de nem lóg ki az ablakból, akkor
+        // el kell tolnom az ablakot = a lefty-t frissítem
+        console.log('eltolom az ablakot', longest)
+        console.log(hash,lefty,righty)
         lefty = hash[s[righty]] + 1
         hash[s[righty]] = righty
+        console.log(hash,lefty,righty)
       }
     }
     if (righty - lefty + 1 > longest) longest = righty - lefty + 1

@@ -2,6 +2,17 @@
 BINARY TREES
 
 1) Given a binary tree. Return the maximum depth of it.
+
+            3
+          /  \
+         6    1
+        / \
+       9  2
+      /    \
+     5     4
+          /
+         8
+
 */
 
 class binaryTreeNode
@@ -44,7 +55,7 @@ console.log(DFS(node1));
 
 /*
 2) Given a binary tree. Return an array containing it's levels in order
---> [[3],[6,1],[9,2,4],[5],[8]]
+--> [[3],[6,1],[9,2],[5,4],[8]]
 */
 
 const BFS = function(root){
@@ -108,7 +119,7 @@ const sideviewDFS = function(node,depth=0,res=[]){
     }else{
         return depth;
     }
-    let level = Math.max(sideviewDFS(node.right,depth,res),sideviewDFS(node.left,depth,res));
+    let level = Math.max(sideviewDFS(node.right,depth,res),sideviewDFS(node.left,depth,res)); // right view
     // let level = Math.max(sideviewDFS(node.left,depth,res),sideviewDFS(node.right,depth,res)); // left view
 };
 

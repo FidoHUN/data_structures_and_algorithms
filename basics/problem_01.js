@@ -46,11 +46,12 @@ var twoSum = function (nums, target) {
   let HashMap = new Map()
   for (let i = 0; i < nums.length; i++) {
     let search_for = target - nums[i]
-    if (HashMap.has(nums[i])) {
+    if (HashMap.has(nums[i])) { 
       return [HashMap.get(nums[i]), i]
     } else {
-      HashMap.set(search_for, i)
+      HashMap.set(search_for, i) // Pl.: Az 5-ös számot keresem a 0.helyen, van-e ilyen szám a HashMap-be? ...
     }
+    console.log(HashMap)
   }
   return null
 }
